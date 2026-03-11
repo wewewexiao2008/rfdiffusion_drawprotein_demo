@@ -1,6 +1,0 @@
-- inference.output_prefix=/public/home/zhangyangroup/chengshiz/github/RFdiffusion_draw_protein_minimal/runs/modatest/rfdiffusion/50
-- inference.lamda_0=1
-- inference.lamda_1=0
-- inference.lamda_2=0
-- contigmap.contigs=[50-50]
-- inference.num_designs=1
