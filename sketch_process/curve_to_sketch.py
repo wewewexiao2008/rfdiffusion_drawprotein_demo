@@ -191,12 +191,24 @@ def build_cnn_model(input_length: int, num_classes: int = 2, dropout_rate: float
     return Model(inputs=inputs, outputs=outputs)
 
 
+# def load_model(checkpoint_path: Path):
+#     model = build_cnn_model(input_length=150, num_classes=2)
+#     model.compile(
+#         optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"]
+#     )
+#     model.load_weights(str(checkpoint_path))
+#     return model
+
 def load_model(checkpoint_path: Path):
     model = build_cnn_model(input_length=150, num_classes=2)
-    model.compile(
-        optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"]
-    )
-    model.load_weights(str(checkpoint_path))
+
+    # 只做推理，不要先 compile；否则老 checkpoint 里的 optimizer 状态会触发兼容问题
+    status = model.load_weights(str(checkpoint_path))
+    try:
+        status.expect_partial()
+    except Exception:
+        pass
+
     return model
 
 
