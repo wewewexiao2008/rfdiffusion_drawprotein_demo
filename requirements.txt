@@ -1,0 +1,9 @@
+biopython
+dgl
+hydra-core
+numpy
+omegaconf
+scipy
+tensorflow
+torch
+tqdm

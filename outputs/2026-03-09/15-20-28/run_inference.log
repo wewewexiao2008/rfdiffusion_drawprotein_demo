@@ -1,0 +1,2 @@
+[2026-03-09 15:20:28,292][__main__][INFO] - Found GPU with device_name NVIDIA A100 80GB PCIe. Will run RFdiffusion on NVIDIA A100 80GB PCIe
+[2026-03-09 15:20:28,292][rfdiffusion.inference.model_runners][INFO] - Reading checkpoint from /public/home/zhangyangroup/chengshiz/github/RFdiffusion_draw_protein_minimal/rfdiffusion/inference/../../models/Base_ckpt.pt
